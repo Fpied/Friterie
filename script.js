@@ -110,9 +110,14 @@ canvas.addEventListener('click', (event) => {
                 let venteBarquetteDeFrite = vente(argent, barquetteDeFrite, client, PrixBarquetteDeFrite);
                 argent = venteBarquetteDeFrite.argent;
                 barquetteDeFrite = venteBarquetteDeFrite.barquetteDeFrite;
-                barquettesVendues += barquettesAvant - barquetteDeFrite;
-                clientsServis++;
-                client = clients();
+
+                if(barquetteDeFrite < barquettesAvant){
+                    barquettesVendues += barquettesAvant - barquetteDeFrite;
+                    clientsServis++;
+                    client = clients();
+
+                }
+                
                 render(ctx, canvas, fond, argent, barquetteDeFrite, pommesDeTerreEpluchees, kiloDePommeDeTerre, client);
             }
             if(boutonsClient[index].texte === 'Client suivant'){

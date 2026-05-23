@@ -1,10 +1,9 @@
- import readlineSync from 'readline-sync';
+import {demanderValeur} from "./saisie.js";
 
-export function couteau(combienDeKiloDePommeDeTerreEpluche){
-
+export function couteau(ctx, canvas, combienDeKiloDePommeDeTerreEpluche, callback){
     const message = "Combien de kilo de pomme de terre eplucher veux tu transformer en frite pas cuite ?";
-    let messageFritePasCuite = readlineSync.question(message);
-    messageFritePasCuite = parseInt(messageFritePasCuite);
+    demanderValeur(ctx, canvas, message, (messageFritePasCuite) =>{
+        messageFritePasCuite = parseInt(messageFritePasCuite);
     let fritePascuite = 0;
 
     if(messageFritePasCuite <= combienDeKiloDePommeDeTerreEpluche){
@@ -19,5 +18,8 @@ export function couteau(combienDeKiloDePommeDeTerreEpluche){
 
      
 
-    return fritePascuite;
+    callback(fritePascuite);
+
+    })
+    
 }

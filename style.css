@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    
+}
+body{
+    text-align: center;
+    background-image: url("asset/image/backgroud.png");
+}
+h1{
+    color: yellow;
+    padding: 10px;
+    
+}
+canvas{
+    display: block;
+    margin: 0 auto;
+    
+    max-width: 100%;
+}

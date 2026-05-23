@@ -1,0 +1,10 @@
+export let argent = 10;
+export let kiloDePommeDeTerre = 0;
+export let barquetteDeFrite = 0;
+export let pommesDeTerreEpluchees = 0;
+export let fritePascuites = 0;
+export let frite = 0;
+export let client = null;
+export const poidsBarquetteDeFrite = 1;
+export const PrixBarquetteDeFrite = 2;
+export const PrixPommeDeTerreAuKilo = 3;

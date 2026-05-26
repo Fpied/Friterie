@@ -6,6 +6,7 @@ export function demanderValeur( ctx, canvas, message, callback){
     const bx = canvas.width / 2 - 400;
     const by = canvas.height / 2 - 75;
     const rect = canvas.getBoundingClientRect();
+    const echelle = rect.width / 2400; // 1200 = largeur originale du canvas
     
     ctx.fillStyle = '#4444cc';
     ctx.beginPath();
@@ -28,15 +29,15 @@ export function demanderValeur( ctx, canvas, message, callback){
 
     const input = document.createElement('input');
     input.type = 'number';
-    input.style.fontSize = '20px';
-    input.style.padding = '8px';
+    input.style.fontSize = (12, 20 * echelle) + 'px';
+    input.style.padding = (8 * echelle) + 'px';
     input.style.borderRadius = '8px';
-    input.style.width = '150px';
+    input.style.width = Math.max(80, 150 * echelle) + 'px';
 
     const btn = document.createElement('button');
     btn.textContent = 'Valider';
-    btn.style.fontSize = '20px';
-    btn.style.padding = '8px 16px';
+    btn.style.fontSize = (12, 20 * echelle) + 'px';
+    btn.style.padding = (8 * echelle) + 'px ' + (16 * echelle) + 'px';
     btn.style.borderRadius = '8px';
     btn.style.backgroundColor = '#00aaff';
     btn.style.color = 'white';
@@ -45,8 +46,8 @@ export function demanderValeur( ctx, canvas, message, callback){
 
     const btnFermer = document.createElement('button');
     btnFermer.textContent = 'X';
-    btnFermer.style.fontSize = '16px';
-    btnFermer.style.padding = '8px';
+    btnFermer.style.fontSize = (10, 16 * echelle) + 'px';
+    btnFermer.style.padding = (8 * echelle) + 'px';
     btnFermer.style.borderRadius = '8px';
     btnFermer.style.backgroundColor = 'red';
     btnFermer.style.color = 'white';

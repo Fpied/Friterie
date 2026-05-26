@@ -5,6 +5,7 @@ import { fond, rafraichir } from "./script.js";
 export function demanderValeur( ctx, canvas, message, callback){
     const bx = canvas.width / 2 - 400;
     const by = canvas.height / 2 - 75;
+    const rect = canvas.getBoundingClientRect();
     
     ctx.fillStyle = '#4444cc';
     ctx.beginPath();
@@ -14,12 +15,12 @@ export function demanderValeur( ctx, canvas, message, callback){
     ctx.fillStyle = 'white';
     ctx.font = 'bold 20px Arial';
     ctx.textAlign = 'center';
-    ctx.fillText(message, canvas.width / 2, by + 50);
+    ctx.fillText(message, canvas.width / 2, by + 30);
     
     const div = document.createElement('div');
-    div.style.position = 'absolute';
-    div.style.left = '50%';
-    div.style.top = '55%';
+    div.style.position = 'fixed';
+    div.style.left = (rect.left + rect.width / 2) + 'px';
+    div.style.top = (rect.top + rect.height / 2) + 'px';
     div.style.transform = 'translate(-50%, -50%)';
     div.style.display = 'flex';
     div.style.gap = '10px';

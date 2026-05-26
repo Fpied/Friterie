@@ -6,7 +6,7 @@ export function demanderValeur( ctx, canvas, message, callback){
     const bx = canvas.width / 2 - 400;
     const by = canvas.height / 2 - 75;
     const rect = canvas.getBoundingClientRect();
-    const echelle = rect.width / 2400; // 1200 = largeur originale du canvas
+    const echelle = rect.width / 1200; // 1200 = largeur originale du canvas
     
     ctx.fillStyle = '#4444cc';
     ctx.beginPath();
